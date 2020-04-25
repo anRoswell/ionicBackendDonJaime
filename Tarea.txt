@@ -1,0 +1,43 @@
+https://github.com/grupogenesys/curso-desarrollo
+
+Tarea para el 18/04/2020
+
+Arreglo de objetos 6 Registros inciales
+Un registro debe tener dentro del nombre la palabra 'Pedro'
+jsonArray : [
+  { id: 1, name: 'Juan Pérez', edad: 18 },
+]
+ - array.push() 2 Elementos nuevos
+ - array.filter() Buscar los mayores de edad
+ - array.find() Buscar quien se llame Juan Pérez
+ - array.find() Buscar quien se el nombre contenga la palabra 'Pedro'
+ - array.splice() Eliminar el elemento en la posición 4
+
+ Tarea para el 18/04/2020
+
+ https://jsonplaceholder.typicode.com/users
+
+ Descargar archivo JSON y guardarlo en el proyecto
+
+ - Obtener el usuario de la posición 3 asignándolo a la constante userData
+ - Modificar, el usuario con el "zipcode" 53919-4257 asignándole diferentes nombres de familiares
+  { id: 123456, relationship: "abz", nombre: "abc" }
+ - Agregar 3 atributos nuevos a los usuarios con ids entre 6 y 9 (incluídos)
+ - Filtrar los usuarios con id entre 6 y 9
+
+ A3ZpTwIOS6iD2ByWaCs-K64&8yHsP.
+app_user
+209.126.4.101
+
+Tarea para el 19/04/2020
+
+ Crear una tabla en la base de datos (Workbench)
+ Crear funcionalidad para crear, listar los registros de la tabla (Nodejs)
+ Crear la ruta con la funcionalidad de consultar / crear (Nodejs)
+
+ Tarea para el 25/04/2020
+ 
+ Hacer los ajustes sugeridos en la tabla de cada uno
+ Consultar un registro (getUser) "SELECT * FROM USERS WHERE id = "
+ Buscar como se hace la eliminación de un registro (deleteUser)
+

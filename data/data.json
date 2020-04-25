@@ -1,0 +1,27 @@
+{
+	"status": true,
+	"message": "ok",
+	"data": [
+		{
+			"id": 1,
+			"name": "Juan Pérez",
+			"birthDate": "2010-05-31",
+			"email": "juanperez@gmail.com",
+			"active": true
+		},
+		{
+			"id": 2,
+			"name": "Pedro Pérez",
+			"birthDate": "2005-08-01",
+			"email": "pedroperez@gmail.com",
+			"active": true
+		},
+		{
+			"id": 3,
+			"name": "María Pérez",
+			"birthDate": "1997-06-01",
+			"email": "mariaperez@gmail.com",
+			"active": true
+		}
+	]
+}
