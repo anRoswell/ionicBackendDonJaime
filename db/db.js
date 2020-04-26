@@ -37,8 +37,8 @@ class DB {
 		return await execute(sql, [this.table, id])
 	}
 
-	async query(sql, params) {
-		return await execute(sql, params)
+	static query(sql, params) {
+		return execute(sql, params)
 	}
 }
 

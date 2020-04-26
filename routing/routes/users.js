@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt')
 const express = require('express')
 const router = express.Router()
 
@@ -27,6 +28,7 @@ router
 	.post('/users', async (req, res) => {
 		try {
 			const data = req.body
+			data.access = bcrypt.hashSync(data.access, 10)
 			const response = await db.create(data)
 			res.json({ status: 'ok', response })
 		} catch (error) {
