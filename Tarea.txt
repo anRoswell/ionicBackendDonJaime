@@ -41,3 +41,7 @@ Tarea para el 19/04/2020
  Consultar un registro (getUser) "SELECT * FROM USERS WHERE id = "
  Buscar como se hace la eliminación de un registro (deleteUser)
 
+Tarea para el 26/04/2020
+
+Crear nueva tabla, normalizada
+Crear rutas de la tabla para realizar el crud
