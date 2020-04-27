@@ -1,0 +1,21 @@
+{
+    "auth": {
+        "allowed": [
+            "username",
+            "password"
+        ],
+        "required": {
+            "username": "usuario",
+            "password": "contraseña"
+        }
+    },
+    "brand": {
+        "allowed": [
+            "name",
+            "status"
+        ],
+        "required": {
+            "name": "nombre"
+        }
+    }
+}
