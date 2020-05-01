@@ -1,21 +1,40 @@
 {
-    "auth": {
-        "allowed": [
-            "username",
-            "password"
-        ],
-        "required": {
-            "username": "usuario",
-            "password": "contraseña"
-        }
-    },
-    "brand": {
-        "allowed": [
-            "name",
-            "status"
-        ],
-        "required": {
-            "name": "nombre"
-        }
-    }
+	"auth": {
+		"allowed": ["username", "access"],
+		"required": {
+			"username": "E-mail",
+			"access": "Password"
+		}
+	},
+	"users": {
+		"allowed": ["name", "username", "access", "email"],
+		"required": {
+			"name": "E-mail",
+			"username": "Password",
+			"access": "Access",
+			"email": "email"
+		}
+	},
+	"brand": {
+		"allowed": ["name", "status"],
+		"required": {
+			"name": "nombre"
+		}
+	},
+
+	"books": {
+		"allowed": ["bks_author", "bks_name", "bks_description"],
+		"required": {
+			"bks_author": "usr_email",
+			"bks_name": "usr_password",
+			"bks_description": "bks_description"
+		}
+	},
+	"profile": {
+		"allowed": ["name", "description", "status"],
+		"required": {
+			"name": "nombre",
+			"description": "descripción"
+		}
+	}
 }

@@ -4,9 +4,17 @@ const router = express.Router()
 
 const DB = require('../../db/db')
 const db = new DB('USERS')
+const validator = require('../../validate/validator')
+const jwt = require('../../jwt/jwt')
+
+const refreshToken = (user, res) => {
+	const token = jwt.createToken(user)
+	res.setHeader('Authorization', `Bearer ${token}`)
+}
 
 router
 	.get('/users', async (req, res) => {
+		console.log(req)
 		try {
 			const users = await db.getAll()
 			res.json({ users })
@@ -15,6 +23,7 @@ router
 		}
 	})
 	.get('/users/:id', async (req, res) => {
+		console.log(req)
 		try {
 			const {
 				params: { id },
@@ -27,11 +36,18 @@ router
 	})
 	.post('/users', async (req, res) => {
 		try {
-			const data = req.body
-			data.access = bcrypt.hashSync(data.access, 10)
-			const response = await db.create(data)
-			res.json({ status: 'ok', response })
+			refreshToken(req.body.user, res)
+			const data = validator('users').cleanData(req.body)
+			const errors = validator('users').isValid(data)
+			if (errors) {
+				res.status(401).json({ status: 'error', error: errors })
+			} else {
+				data.access = bcrypt.hashSync(data.access, 10)
+				const response = await db.create(data)
+				res.json({ status: 'ok', response })
+			}
 		} catch (error) {
+			console.log(error)
 			res.json({ status: 'error', error })
 		}
 	})

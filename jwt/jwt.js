@@ -17,6 +17,26 @@ module.exports = {
 			return false
 		}
 	},
-
-	validateToken: (token) => {},
+	isAuth: (req, res, next) => {
+		try {
+			const {
+				headers,
+				headers: { authorization },
+			} = req
+			if (!authorization) {
+				res.status(403).json({ status: 'error', error: 'Acceso no permitido' })
+			} else {
+				const token = authorization.split(' ').pop()
+				const payload = jwt.verify(token, process.env.JWT_SESSION)
+				if (!payload || (payload && payload.iat < moment().unix())) {
+					res.status(401).json({ status: 'error', error: 'Acceso no permitido' })
+				} else {
+					req.body.user = encryptor.decrypt(payload.sub)
+					next()
+				}
+			}
+		} catch (error) {
+			res.status(403).json({ status: 'error', error: 'Acceso no permitido' })
+		}
+	},
 }
